@@ -1,11 +1,10 @@
 function solution(array, commands) {
     const result = [];
-    
     for (let i = 0; i < commands.length; i++) {
-        const [start, end, k] = commands[i];
-        const slice = array.slice(start - 1, end);
-        const sort = slice.sort((a,b)=> a-b);
-        result.push(sort[k-1]);
+        for (let j = 0; j < commands[0].length; j++) {
+            const slice = array.slice(commands[i][j], commands[i][j+1]);
+            result.push(slice.sort((a,b)=> a-b).slice(commands[j+2]-1,commands[j+2]));
+        }
     }
     return result;
 }
