@@ -9,11 +9,11 @@ meet_usage_table = []
 end_time = 0
 
 for meeting in meeting_inf:
-  if len(meeting_inf) == 0:
+  if len(meet_usage_table) == 0:
     meet_usage_table.append(meeting)
     end_time = meeting[1]
   
-  if meeting[0] >= end_time:
+  elif meeting[0] >= end_time:
     meet_usage_table.append(meeting)
     end_time = meeting[1]
   
